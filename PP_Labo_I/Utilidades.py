@@ -84,7 +84,7 @@ def obtener_datos(lista:list, raza:str, habilidad_buscada:str):
             if habilidad != habilidad_buscada:
                 habilidades_no_buscadas.append(habilidad)
         
-        raza_personaje = tuple(personaje["raza"])
+        raza_personaje = personaje["raza"]
         raza_personaje = unidecode.unidecode(raza_personaje[0].lower())
         
         if raza == raza_personaje and habilidad_buscada in habilidades_decodificadas:

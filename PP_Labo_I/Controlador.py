@@ -30,6 +30,25 @@ def guardar_txt_resultado_batalla(ganador, perdedor):
         
     return retorno
 
+def guardar_csv_personajes_modificados(ruta:str,lista:list):
+    """_summary_
+        Creo un nuevo archivo CSV con los datos recibidos
+    Args:
+        ruta (str): direccion del archivo
+        lista (list): lista de datos a guardar
+    """    
+    with open(ruta,'a',encoding='utf-8') as nuevo_csv:
+        
+        for personaje in lista:
+            id_personaje = personaje['id']
+            nombre = personaje['nombre']
+            raza = personaje['raza']
+            poder_pelea = personaje['poder_pelea']
+            poder_ataque = personaje['poder_ataque']
+            habilidades = personaje['habilidades']
+
+            nuevo_csv.write(f"{id_personaje},{nombre},{raza},{poder_pelea},{poder_ataque},{habilidades}\n")
+
 def dbz_jugar_batalla(lista:list):
     """_summary_
         Recibo la lista de datos leidos del archivo CSV para 
@@ -38,7 +57,8 @@ def dbz_jugar_batalla(lista:list):
         lista (list): lista contenedora de los datos leidos del archivo CSV
     """
     personaje_elegido = None
-
+    personajes_actualizados = []
+    
     system('cls')
     print("Elija su personaje:")
     for personaje in lista:
@@ -51,8 +71,15 @@ def dbz_jugar_batalla(lista:list):
     if Validaciones.validar_entero(eleccion):
          for personaje in lista:
             if personaje['id'] == int(eleccion): 
+                if 'Saiyan' in personaje['raza']:  #Verifico que pertenece a la raza 'Saiyan
+                    personaje['poder_pelea'] *= 1.50 #Aumento su poder de pelea un 50%
+                    personaje['poder_ataque'] *= 1.70 #Aumento su poder de ataque un 70%
+                    personaje['habilidades'].append('Transformacion Nivel Dios') #Agrego una nueva habilidad
+                    print("Tu personaje es un Saiyan, Obtuviste un Power up!")
+                    personajes_actualizados.append(personaje)
                 personaje_elegido = personaje
                 break
+            
     if personaje_elegido is None:
         print("Debe seleccionar el numero de personaje mostrado en pantalla")
     
@@ -67,7 +94,9 @@ def dbz_jugar_batalla(lista:list):
     perdedor = resultado[1]
     
     guardar_txt_resultado_batalla(ganador,perdedor)
+    guardar_csv_personajes_modificados('personajes_modificados.csv',personajes_actualizados)
     
+
 def guardar_personajes_json(lista:list,raza:str,habilidad:str):
     """_summary_
         Recibo la lista y los datos necesarios para guardar los mismos en el archivo json

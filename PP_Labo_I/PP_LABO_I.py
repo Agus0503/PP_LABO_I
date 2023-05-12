@@ -31,6 +31,12 @@ Goku - 5000000 - Kamehameha + Super Saiyan 2
 7. Leer Json: permitirá mostrar un listado con los personajes guardados en el archivo Json de la opción 6
 
 8. Salir del programa
+
+NUEVO REQUERIMIENTO
+Agregar una opción que permita otorgarle un 50% más de poder de pelea y un 70% más de poder de ataque a los Saiyan, 
+y agregaran a sus habilidades la “transformación nivel dios”.
+Guardar en un archivo CSV los personajes que hayan recibido esta actualización.
+
 '''
 from os import system
 import glob 

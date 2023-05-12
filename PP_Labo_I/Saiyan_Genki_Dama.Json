@@ -1,0 +1,10 @@
+[
+    {
+        "nombre": "Goku",
+        "poder_ataque": 10000,
+        "habilidades_restantes": [
+            "kamehameha",
+            "super saiyan"
+        ]
+    }
+]

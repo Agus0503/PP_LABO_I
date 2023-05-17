@@ -40,7 +40,11 @@ def leer_json(ruta:str):
     return data
 
 def mostrar_datos_json(archivo:str):
-    
+    """_summary_
+        Recibo un archivo y muestro su contenido
+    Args:
+        archivo (str): Archivo por el cual se desea ver sus datos
+    """    
     data = leer_json(archivo)
     
     for personaje in data:

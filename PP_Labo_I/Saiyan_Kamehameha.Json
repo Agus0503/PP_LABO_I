@@ -1,0 +1,18 @@
+[
+    {
+        "nombre": "Goten",
+        "poder_ataque": 2800,
+        "habilidades_restantes": [
+            "super saiyan",
+            "tambor del trueno"
+        ]
+    },
+    {
+        "nombre": "Goku",
+        "poder_ataque": 10000,
+        "habilidades_restantes": [
+            "genki dama",
+            "super saiyan"
+        ]
+    }
+]

@@ -66,3 +66,35 @@ Perdedor: Spopovich
 Fecha de la batalla: 12/05/2023
 Ganador: Goku 
 Perdedor: Piccolo
+
+Fecha de la batalla: 12/05/2023
+Ganador: Kid Buu 
+Perdedor: Tien
+
+Fecha de la batalla: 12/05/2023
+Ganador: Gohan 
+Perdedor: Chiaotzu
+
+Fecha de la batalla: 17/05/2023
+Ganador: Whis 
+Perdedor: Hit
+
+Fecha de la batalla: 17/05/2023
+Ganador: Hit 
+Perdedor: Kibito
+
+Fecha de la batalla: 17/05/2023
+Ganador: Gohan 
+Perdedor: Majin Buu
+
+Fecha de la batalla: 17/05/2023
+Ganador: Goten 
+Perdedor: Videl
+
+Fecha de la batalla: 17/05/2023
+Ganador: Goten 
+Perdedor: Tien
+
+Fecha de la batalla: 17/05/2023
+Ganador: Trunks del futuro 
+Perdedor: Mr. Satan

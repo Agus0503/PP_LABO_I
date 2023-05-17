@@ -122,7 +122,7 @@ def submenu_habilidades(lista:list):
         habilidad = input("Ingrese la habilidad por la que desea listar: ")
         dbz_lista_por_habilidad(lista, habilidad)
     elif opcion == 2:
-        listar_habilidades()
+        imprimir_habilidades(lista)
         
         
 def dbz_lista_por_habilidad(lista:list, habilidad:str):
@@ -159,34 +159,20 @@ def dbz_lista_por_habilidad(lista:list, habilidad:str):
         print(f"- Nombre: {personaje['nombre']} | Raza: {personaje['raza']} | Promedio Poder: {personaje['promedio_poder']}")
 
         
-def listar_habilidades():
-    """_summary_
-        Imprime las habilidades disponibles al usuario para hacerle saber cuales puede ocupar
-        en caso de no concerlas
-    """    
-    habilidades = ['''
-                    Mind Control         Summon Majins                Gigantic Meteor              Omega Blaster      
-                    Supernova            Death Beam                   Dimension Gate               Machinegun Punch
-                    Flight               Energy Blast                 Time Manipulation            Teleportation
-                    Darkness Illusion    Devour Light                 Absorb Ki                    Energy Drain 
-                    Eye Laser            Misiles                      Explosión solar              Auto-reparación 
-                    Barrera de energía   Ataque combinado             Explosión de ki              Ki infinito 
-                    Garras afiladas      Destello de energía          Magia de control mental      Invocación de Majin Buu 
-                    Magia oscura         Sphere of Destruction        God of Destruction's Roar    Temporal Do-Over
-                    Solar Kamehameha     Spirit Bomb                  Telekinesis                  Control de la mente 
-                    Lanza de energía     Poderes oscuros              Super Saiyan                 Kamehameha 
-                    Tambor del Trueno    Super Ghost Kamikaze Attack  Ataque rugiente              Super Saiyan 3
-                    Time Skip            Icicle Lance                 Flash Fist Crush             Potara 
-                    Teletransportación   Sanación divina              Ataque destructor            Afterimage Technique 
-                    Kamehameha Wave      Regeneracion                 Ataque de chocolate          Barrera magica
-                    Cadena de misiles    Superhuman Water             Explosión de smog            Makankosappo 
-                    Barrera              Explosión de ki divino       Dodon Ray                    Solar Flare
-                    Espada de energía    Ataque del futuro            Super Saiyan 2               Espada del juicio 
-                    Ataque del dragón    Gran saiyaman                Ataque del rayo              Patada giratoria
-                    Warrior's Heart      Acelerated Healing           Lobo feroz                   Puño del dragón
-                    Genki Dama''']
-    
+def imprimir_habilidades(diccionarios):
+
+    habilidades_obtenidas = set()
+
+    for diccionario in diccionarios:
+        habilidades = diccionario.get('habilidades')
+        if habilidades:
+            habilidades_obtenidas.update(habilidades)
+
     system('cls')
-    print("Las habildiades disponibles son: ")
-    for i in range(len(habilidades)):
-        print(habilidades[i])    
+    if habilidades_obtenidas:
+        print("Habilidades obtenidas:")
+        for habilidad in habilidades_obtenidas:
+            print(f"- {habilidad}")
+    else:
+        print("No se encontraron habilidades")
+
